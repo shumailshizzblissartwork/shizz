@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Shizz Bliss - Luxury Artisan Store"
+version = "1.0.0"
+id = "artifacts/shizz-bliss"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25595
+
+[services.development]
+run = "pnpm --filter @workspace/shizz-bliss run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/shizz-bliss", "run", "build" ]
+publicDir = "artifacts/shizz-bliss/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25595"
+BASE_PATH = "/"

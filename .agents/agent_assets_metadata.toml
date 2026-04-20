@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "3i6tfPDeBVQ0EQexaFBt1"
+uri = "file://artifacts/shizz-bliss/src/assets/hero.png"
+type = "image"
+title = "Hero background image"
+
+[[generated]]
+id = "ccHHyfC5bfT1-RXTiRp1b"
+uri = "file://artifacts/shizz-bliss/src/assets/pen.png"
+type = "image"
+title = "Fountain pen"
+
+[[generated]]
+id = "Bygpod4xCbKGcTktDuNIC"
+uri = "file://artifacts/shizz-bliss/src/assets/bookmark.png"
+type = "image"
+title = "Resin Bookmark"
+
+[[generated]]
+id = "lSYtwPpva8JGJfNQWy2WA"
+uri = "file://artifacts/shizz-bliss/src/assets/clock.png"
+type = "image"
+title = "Resin Clock"
+
+[[generated]]
+id = "Hc8GaN2i3MUpuPDNkf0Ll"
+uri = "file://artifacts/shizz-bliss/src/assets/plaque.png"
+type = "image"
+title = "Bespoke Plaque"
+
+[[generated]]
+id = "uZ6fzd0mqNlVMDVlWsCSQ"
+uri = "file://artifacts/shizz-bliss/src/assets/tasbeeh.png"
+type = "image"
+title = "Tasbeeh"
+
+[[generated]]
+id = "KVKt2OLuJn3R8kBw2n5hb"
+uri = "file://artifacts/shizz-bliss/src/assets/peony-candle.png"
+type = "image"
+title = "Peony Candle"
+
+[[generated]]
+id = "ggUkhNmuE2pfnzFkrixrj"
+uri = "file://artifacts/shizz-bliss/src/assets/bubble-candle.png"
+type = "image"
+title = "Bubble Candle"
+
+[[generated]]
+id = "jKSqX2t_1BGqtrASx56YC"
+uri = "file://artifacts/shizz-bliss/src/assets/oud-candle.png"
+type = "image"
+title = "Oud Candle"
+
+[[generated]]
+id = "MsRXvkVjdx_d0Mz_nAqBo"
+uri = "file://artifacts/shizz-bliss/src/assets/peacock.png"
+type = "image"
+title = "Peacock Bead Panel"
