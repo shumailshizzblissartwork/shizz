@@ -43,16 +43,22 @@ export const categories: Category[] = [
     image: peonyCandleImg,
   },
   {
-    id: "creators-studio",
-    name: "Creator's Studio",
-    description: "Premium tools and accents for the discerning artisan.",
-    image: heroImg, // Reusing hero for now
+    id: "vinyl-stickers",
+    name: "Vinyl Stickers",
+    description: "Premium custom vinyl decals — bold, precise, and built to last on any surface.",
+    image: heroImg,
   },
   {
     id: "textured-art",
     name: "Textured Art",
     description: "Tactile masterpieces blending traditional heritage with dimensional modernity.",
     image: peacockImg,
+  },
+  {
+    id: "creators-studio",
+    name: "Creator's Studio",
+    description: "Premium tools and supplies curated for the discerning artisan.",
+    image: heroImg,
   },
 ];
 
@@ -150,18 +156,54 @@ export const products: Product[] = [
     features: ["Luxury dark glass vessel with gold branding", "Complex, multi-layered fragrance profile", "Crackling wooden wick", "Burn time: 60+ hours"],
   },
 
-  // Creator's Studio
+  // Vinyl Stickers
   {
-    id: "vinyl-decals",
-    categoryId: "creators-studio",
-    name: "Premium Vinyl Decal Set",
-    tagline: "Elevate every surface, express every vision",
-    description: "A curated collection of intricate gold and silver geometric and floral decals designed for fellow artisans. These high-adhesion decals are perfect for embedding in resin, applying to glass, or elevating packaging, offering a flawless metallic finish without the hassle of gold leaf.",
-    price: 25,
-    image: heroImg, 
+    id: "floral-vinyl-set",
+    categoryId: "vinyl-stickers",
+    name: "Floral Bouquet Vinyl Sticker Set",
+    tagline: "Delicate blooms that stick around forever",
+    description: "A curated set of hand-illustrated floral vinyl stickers, perfect for laptops, journals, water bottles, and phone cases. Each design features rich botanical detail with a waterproof matte or glossy finish that resists fading. A gift of beauty that lasts.",
+    price: 15,
+    image: heroImg,
     images: [heroImg],
-    features: ["Ultra-thin profile for seamless embedding", "High-tack adhesive", "Assorted geometric and floral motifs", "Resin-safe"],
+    features: ["Waterproof & UV-resistant", "Matte or gloss finish available", "Easy peel-and-stick application", "Set of 10 designs"],
   },
+  {
+    id: "gold-metallic-vinyl",
+    categoryId: "vinyl-stickers",
+    name: "Gold Metallic Decal Sheet",
+    tagline: "Elevate every surface, express every vision",
+    description: "A curated collection of intricate gold metallic geometric and floral decals designed to transform any surface. Perfect for embedding in resin, applying to glass, or elevating gift packaging — offering a flawless metallic finish with effortless elegance.",
+    price: 25,
+    image: heroImg,
+    images: [heroImg],
+    features: ["Ultra-thin profile for seamless embedding", "High-tack adhesive", "Assorted geometric and floral motifs", "Resin-safe & heatproof"],
+  },
+  {
+    id: "custom-name-sticker",
+    categoryId: "vinyl-stickers",
+    name: "Custom Name & Logo Vinyl Sticker",
+    tagline: "Your brand, your story — stuck beautifully",
+    description: "Commission a fully custom vinyl sticker cut to your design — your name, your logo, your calligraphy. Perfect for small businesses, packaging branding, events, or personalised gifting. Available in any size, colour, and finish.",
+    price: 20,
+    image: heroImg,
+    images: [heroImg],
+    isCustom: true,
+    features: ["Fully custom design", "Any size & colour", "Gloss, matte, or holographic finish", "Minimum order: 10 pieces"],
+  },
+  {
+    id: "aesthetic-sticker-pack",
+    categoryId: "vinyl-stickers",
+    name: "Aesthetic Journaling Sticker Pack",
+    tagline: "Add a little art to every page",
+    description: "A thoughtfully curated journaling sticker pack inspired by luxury aesthetics — celestial motifs, botanical illustrations, and elegant typography stickers. Designed for planners, bullet journals, scrapbooks, and creative souls.",
+    price: 18,
+    image: heroImg,
+    images: [heroImg],
+    features: ["50+ stickers per pack", "Washi tape & die-cut styles", "Premium paper with easy repositioning", "Themed for seasonal & everyday use"],
+  },
+
+  // Creator's Studio
   {
     id: "silicone-molds",
     categoryId: "creators-studio",
