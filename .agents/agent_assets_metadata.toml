@@ -5,7 +5,7 @@ outputs = []
 id = "3i6tfPDeBVQ0EQexaFBt1"
 uri = "file://artifacts/shizz-bliss/src/assets/hero.png"
 type = "image"
-title = "Hero background image"
+title = "vibrant-resin-hero"
 
 [[generated]]
 id = "ccHHyfC5bfT1-RXTiRp1b"
