@@ -1,8 +1,9 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ShoppingBag } from "lucide-react";
 import logoImg from "@assets/WhatsApp_Image_2026-04-19_at_6.43.48_PM_(1)_1776668685304.jpeg";
+import { useCart } from "@/lib/cart-context";
 
 const collections = [
   { href: "/collections/resin-art", label: "Resin Art" },
@@ -16,6 +17,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [collectionsOpen, setCollectionsOpen] = useState(false);
+  const { itemCount, openCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -42,7 +44,6 @@ export function Navbar() {
 
         {/* Logo + Brand Name */}
         <Link href="/" className="flex items-center gap-3 z-50 group">
-          {/* Gradient ring: outer wrapper = gradient bg, inner div = dark bg + clip */}
           <div className="shrink-0 rounded-full p-[2.5px] transition-all duration-300"
             style={{ background: "linear-gradient(135deg, #d4af37, #e8729a, #a78bfa, #60a5fa, #34d399, #d4af37)" }}>
             <div className="w-11 h-11 rounded-full overflow-hidden bg-[#0c0c14]">
@@ -140,6 +141,23 @@ export function Navbar() {
             Contact
           </Link>
 
+          {/* Cart Icon */}
+          <button
+            onClick={openCart}
+            className="relative text-muted-foreground hover:text-primary transition-colors p-1"
+            aria-label="Open cart"
+          >
+            <ShoppingBag size={18} />
+            {itemCount > 0 && (
+              <span
+                className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full text-[9px] font-bold flex items-center justify-center text-black leading-none"
+                style={{ background: "linear-gradient(135deg, #d4af37, #e8729a)" }}
+              >
+                {itemCount}
+              </span>
+            )}
+          </button>
+
           <Link
             href="/custom-orders"
             className="border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors tracking-widest uppercase text-[10px] px-4 py-2 rounded-sm"
@@ -148,13 +166,30 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground z-50"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile right side: cart + hamburger */}
+        <div className="md:hidden flex items-center gap-4 z-50">
+          <button
+            onClick={openCart}
+            className="relative text-muted-foreground hover:text-primary transition-colors p-1"
+            aria-label="Open cart"
+          >
+            <ShoppingBag size={20} />
+            {itemCount > 0 && (
+              <span
+                className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full text-[9px] font-bold flex items-center justify-center text-black leading-none"
+                style={{ background: "linear-gradient(135deg, #d4af37, #e8729a)" }}
+              >
+                {itemCount}
+              </span>
+            )}
+          </button>
+          <button
+            className="text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <div

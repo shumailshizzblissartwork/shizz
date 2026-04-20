@@ -5,23 +5,28 @@ import NotFound from "./not-found";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Check } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { useCart } from "@/lib/cart-context";
 
 export default function ProductPage() {
   const { id } = useParams();
-  const { toast } = useToast();
+  const { addItem } = useCart();
   const product = products.find((p) => p.id === id);
   const [activeImage, setActiveImage] = useState(0);
+  const [added, setAdded] = useState(false);
 
   if (!product) return <NotFound />;
 
   const category = categories.find((c) => c.id === product.categoryId);
 
   const handleAddToCart = () => {
-    toast({
-      title: "Added to Collection",
-      description: `${product.name} has been added to your cart.`,
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
     });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
   };
 
   return (
@@ -98,12 +103,13 @@ export default function ProductPage() {
                     <Link href={`/custom-orders?piece=${product.name}`}>Commission Your Vision</Link>
                   </Button>
                 ) : (
-                  <Button 
+                  <Button
                     onClick={handleAddToCart}
-                    size="lg" 
-                    className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-none h-16 text-sm tracking-widest uppercase transition-transform active:scale-[0.98]"
+                    size="lg"
+                    className="w-full rounded-none h-16 text-sm tracking-widest uppercase transition-all active:scale-[0.98] text-black font-semibold flex items-center justify-center gap-2"
+                    style={{ background: added ? "linear-gradient(135deg,#34d399,#60a5fa)" : "linear-gradient(135deg,#d4af37,#e8729a,#a78bfa)" }}
                   >
-                    Bring Art Home
+                    {added ? <><Check className="w-4 h-4" /> Added to Cart</> : "Bring Art Home"}
                   </Button>
                 )}
                 
