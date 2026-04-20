@@ -42,12 +42,16 @@ export function Navbar() {
 
         {/* Logo + Brand Name */}
         <Link href="/" className="flex items-center gap-3 z-50 group">
-          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/60 group-hover:border-primary transition-colors shrink-0 bg-[#1a1a2e]">
-            <img
-              src={logoImg}
-              alt="Shumail's Shizz Bliss Studio Logo"
-              className="w-full h-full object-cover"
-            />
+          {/* Gradient ring: outer wrapper = gradient bg, inner div = dark bg + clip */}
+          <div className="shrink-0 rounded-full p-[2.5px] transition-all duration-300"
+            style={{ background: "linear-gradient(135deg, #d4af37, #e8729a, #a78bfa, #60a5fa, #34d399, #d4af37)" }}>
+            <div className="w-11 h-11 rounded-full overflow-hidden bg-[#0c0c14]">
+              <img
+                src={logoImg}
+                alt="Shumail's Shizz Bliss Studio Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           <div className="flex flex-col leading-tight">
             <span className="font-serif text-sm md:text-base tracking-widest text-primary font-semibold uppercase">
@@ -159,7 +163,11 @@ export function Navbar() {
             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <img src={logoImg} alt="Logo" className="w-20 h-20 rounded-full border-2 border-primary object-cover mb-2 bg-[#1a1a2e]" />
+          <div className="rounded-full p-[3px] mb-2" style={{ background: "linear-gradient(135deg, #d4af37, #e8729a, #a78bfa, #60a5fa, #34d399, #d4af37)" }}>
+            <div className="w-20 h-20 rounded-full overflow-hidden bg-[#0c0c14]">
+              <img src={logoImg} alt="Logo" className="w-full h-full object-cover" />
+            </div>
+          </div>
           <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-xl font-serif tracking-widest uppercase hover:text-primary transition-colors">Home</Link>
           <div className="flex flex-col items-center gap-3">
             <span className="text-xs tracking-widest uppercase text-muted-foreground">Collections</span>
