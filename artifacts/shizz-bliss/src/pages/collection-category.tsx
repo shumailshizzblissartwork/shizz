@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout";
 import { Link, useParams } from "wouter";
-import { categories, products } from "@/lib/data";
+import { categories, products, formatPrice } from "@/lib/data";
 import NotFound from "./not-found";
 
 export default function CollectionCategory() {
@@ -49,7 +49,7 @@ export default function CollectionCategory() {
                   <h3 className="font-serif text-2xl text-foreground mb-3 group-hover:text-primary transition-colors">{product.name}</h3>
                   <p className="text-muted-foreground text-sm font-light mb-6 flex-1">{product.tagline}</p>
                   <div className="flex items-center justify-between border-t border-border/50 pt-4">
-                    <span className="text-foreground tracking-wider font-medium">${product.price}</span>
+                    <span className="text-foreground tracking-wider font-medium">{formatPrice(product.price)}</span>
                     <span className="text-xs uppercase tracking-widest text-primary flex items-center gap-2">
                       Bring Art Home <span className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">→</span>
                     </span>

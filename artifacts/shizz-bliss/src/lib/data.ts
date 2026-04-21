@@ -8,6 +8,7 @@ import peonyCandleImg from "../assets/peony-candle.png";
 import bubbleCandleImg from "../assets/bubble-candle.png";
 import oudCandleImg from "../assets/oud-candle.png";
 import peacockImg from "../assets/peacock.png";
+import calligraphyStickersImg from "@assets/WhatsApp_Image_2026-04-19_at_8.59.39_PM_(6)_1776784663607.jpeg";
 
 export interface Product {
   id: string;
@@ -15,7 +16,7 @@ export interface Product {
   name: string;
   tagline: string;
   description: string;
-  price: number;
+  price: number; // Price in PKR (Pakistani Rupees)
   image: string;
   images: string[];
   features: string[];
@@ -28,6 +29,8 @@ export interface Category {
   description: string;
   image: string;
 }
+
+export const formatPrice = (n: number): string => `Rs. ${n.toLocaleString("en-PK")}`;
 
 export const categories: Category[] = [
   {
@@ -45,8 +48,8 @@ export const categories: Category[] = [
   {
     id: "vinyl-stickers",
     name: "Vinyl Stickers",
-    description: "Premium custom vinyl decals — bold, precise, and built to last on any surface.",
-    image: heroImg,
+    description: "Premium custom calligraphy vinyl decals — bold, precise, and built to last on any surface.",
+    image: calligraphyStickersImg,
   },
   {
     id: "textured-art",
@@ -70,7 +73,7 @@ export const products: Product[] = [
     name: "Luxury Resin Fountain Pen",
     tagline: "A writing instrument reimagined as wearable art",
     description: "Crafted with midnight blue and gold leaf resin, this fountain pen is a testament to the unhurried art of writing. Featuring a premium gold nib and a flawlessly balanced body, it elevates the simple act of writing into a moment of pure indulgence. Each pen is individually poured and turned, ensuring no two swirling patterns are ever alike.",
-    price: 250,
+    price: 7500,
     image: penImg,
     images: [penImg],
     features: ["Hand-turned resin body", "18k gold-plated nib", "Includes luxury presentation box", "Bespoke colorways available upon request"],
@@ -81,7 +84,7 @@ export const products: Product[] = [
     name: "Marble-Swirl Resin Bookmark",
     tagline: "Mark your place in the story of elegance",
     description: "A sliver of frozen marble and gold, this resin bookmark is designed for the avid reader who appreciates the tactile beauty of a physical book. Infused with delicate gold flakes and a rich, swirling pigment, it catches the light beautifully as it rests between the pages of your favorite novel.",
-    price: 45,
+    price: 1500,
     image: bookmarkImg,
     images: [bookmarkImg],
     features: ["Shatter-resistant artisanal resin", "Genuine gold leaf inclusions", "Silk tassel", "Slim profile to protect book binding"],
@@ -92,7 +95,7 @@ export const products: Product[] = [
     name: "Midnight Galaxy Resin Clock",
     tagline: "Time suspended in a universe of your own",
     description: "An architectural statement piece for your wall. The Midnight Galaxy clock features deep, celestial swirls of dark blue, black, and gold resin, rimmed in brushed brass. It does not simply tell time; it commands the room, offering a moment of cosmic reflection every time you glance its way.",
-    price: 480,
+    price: 14000,
     image: clockImg,
     images: [clockImg],
     features: ["Silent continuous sweep movement", "Brushed brass outer ring", "Multi-layered resin depth", "Diameter: 24 inches"],
@@ -103,7 +106,7 @@ export const products: Product[] = [
     name: "Bespoke Name Plaque",
     tagline: "Your identity, crystallized in resin",
     description: "Commission a bespoke name plaque that immortalizes your identity or family name in a stunning resin encasement. Perfect for executive desks, luxury home entrances, or as an heirloom gift. The calligraphy is meticulously rendered and then sealed in layers of crystal-clear and gold-flecked resin.",
-    price: 180,
+    price: 5500,
     image: plaqueImg,
     images: [plaqueImg],
     isCustom: true,
@@ -115,7 +118,7 @@ export const products: Product[] = [
     name: "Artisan Tasbeeh",
     tagline: "Devotion elevated to artisan heirloom",
     description: "These luxury prayer beads are crafted from deep-toned resin with intricate gold accents. Designed to feel substantial and comforting in the hand, this Tasbeeh is a beautiful marriage of faith and fine craftsmanship, meant to be passed down through generations.",
-    price: 120,
+    price: 3500,
     image: tasbeehImg,
     images: [tasbeehImg],
     features: ["99 beads with markers", "Hand-knotted silk thread", "Custom metallic accents", "Velvet pouch included"],
@@ -128,7 +131,7 @@ export const products: Product[] = [
     name: "Peony Sculptural Candle",
     tagline: "Fragrance meets fine art in a bloom that never wilts",
     description: "A stunning, intricately carved peony flower rendered in premium soy-blend wax. This sculptural candle serves as a breathtaking centerpiece before it is ever lit. When burned, it releases a delicate, sophisticated floral bouquet that fills the room without overpowering it.",
-    price: 65,
+    price: 2200,
     image: peonyCandleImg,
     images: [peonyCandleImg],
     features: ["Intricate petal detailing", "Premium soy-beeswax blend", "Lead-free cotton wick", "Burn time: 40+ hours"],
@@ -139,7 +142,7 @@ export const products: Product[] = [
     name: "Bubble Sculptural Candle",
     tagline: "Architectural beauty, made to be burned",
     description: "Minimalist, geometric, and undeniably chic. The Bubble candle is a modern icon of interior styling. Poured in a soft ivory hue, it casts intriguing shadows and provides a warm, ambient glow that softens the architectural rigidity of the design.",
-    price: 40,
+    price: 1500,
     image: bubbleCandleImg,
     images: [bubbleCandleImg],
     features: ["Modern geometric design", "Unscented or subtly fragranced options", "Clean-burning wax", "Perfect for styling and gifting"],
@@ -150,7 +153,7 @@ export const products: Product[] = [
     name: "Rose & Oud Hand-Poured Candle",
     tagline: "The scent of heritage, poured with intention",
     description: "Encased in an elegant dark glass vessel, this candle offers a deeply intoxicating blend of rich damask rose and smoky, resinous oud wood. It is the olfactory equivalent of a velvet tapestry—warm, mysterious, and profoundly luxurious.",
-    price: 85,
+    price: 2800,
     image: oudCandleImg,
     images: [oudCandleImg],
     features: ["Luxury dark glass vessel with gold branding", "Complex, multi-layered fragrance profile", "Crackling wooden wick", "Burn time: 60+ hours"],
@@ -158,49 +161,49 @@ export const products: Product[] = [
 
   // Vinyl Stickers
   {
-    id: "floral-vinyl-set",
+    id: "calligraphy-occasion-stickers",
     categoryId: "vinyl-stickers",
-    name: "Floral Bouquet Vinyl Sticker Set",
-    tagline: "Delicate blooms that stick around forever",
-    description: "A curated set of hand-illustrated floral vinyl stickers, perfect for laptops, journals, water bottles, and phone cases. Each design features rich botanical detail with a waterproof matte or glossy finish that resists fading. A gift of beauty that lasts.",
-    price: 15,
-    image: heroImg,
-    images: [heroImg],
-    features: ["Waterproof & UV-resistant", "Matte or gloss finish available", "Easy peel-and-stick application", "Set of 10 designs"],
+    name: "Calligraphy Occasion Sticker Set",
+    tagline: "Happy Birthday, Mom, Dad, Anniversary & more",
+    description: "A beautiful curated set of premium calligraphy vinyl stickers featuring elegant cursive lettering — Happy Birthday, Anniversary, Love You, Mom, Dad, and more. Available in classic black or shimmering metallic gold finish. Perfect for personalising gift boxes, cake toppers, balloons, candles, and event décor.",
+    price: 250,
+    image: calligraphyStickersImg,
+    images: [calligraphyStickersImg],
+    features: ["Premium vinyl with strong adhesive", "Choice of black or metallic gold", "Set of 6 popular phrases", "Smooth peel-and-stick application"],
   },
   {
-    id: "gold-metallic-vinyl",
+    id: "mubarak-arabic-stickers",
     categoryId: "vinyl-stickers",
-    name: "Gold Metallic Decal Sheet",
-    tagline: "Elevate every surface, express every vision",
-    description: "A curated collection of intricate gold metallic geometric and floral decals designed to transform any surface. Perfect for embedding in resin, applying to glass, or elevating gift packaging — offering a flawless metallic finish with effortless elegance.",
-    price: 25,
-    image: heroImg,
-    images: [heroImg],
-    features: ["Ultra-thin profile for seamless embedding", "High-tack adhesive", "Assorted geometric and floral motifs", "Resin-safe & heatproof"],
+    name: "Mubarak Arabic Calligraphy Stickers",
+    tagline: "Elegant Arabic script for gifting & festive décor",
+    description: "Beautifully crafted Arabic calligraphy 'Mubarak' (مبارک) vinyl stickers — perfect for Eid gift boxes, wedding favours, festive cards, candles, and home décor. Available in striking black or luxurious metallic gold. A meaningful touch of heritage on every gift.",
+    price: 200,
+    image: calligraphyStickersImg,
+    images: [calligraphyStickersImg],
+    features: ["Authentic Arabic calligraphy", "Black or metallic gold finish", "Pack of 5 stickers", "Waterproof & durable"],
   },
   {
     id: "custom-name-sticker",
     categoryId: "vinyl-stickers",
     name: "Custom Name & Logo Vinyl Sticker",
-    tagline: "Your brand, your story — stuck beautifully",
-    description: "Commission a fully custom vinyl sticker cut to your design — your name, your logo, your calligraphy. Perfect for small businesses, packaging branding, events, or personalised gifting. Available in any size, colour, and finish.",
-    price: 20,
-    image: heroImg,
-    images: [heroImg],
+    tagline: "Your name, your brand — cut beautifully",
+    description: "Commission a fully custom vinyl sticker cut to your design — your name, your logo, or your own calligraphy phrase. Perfect for small businesses, packaging branding, weddings, events, or personalised gifting. Available in any size, colour, and finish.",
+    price: 350,
+    image: calligraphyStickersImg,
+    images: [calligraphyStickersImg],
     isCustom: true,
     features: ["Fully custom design", "Any size & colour", "Gloss, matte, or holographic finish", "Minimum order: 10 pieces"],
   },
   {
-    id: "aesthetic-sticker-pack",
+    id: "love-you-stickers",
     categoryId: "vinyl-stickers",
-    name: "Aesthetic Journaling Sticker Pack",
-    tagline: "Add a little art to every page",
-    description: "A thoughtfully curated journaling sticker pack inspired by luxury aesthetics — celestial motifs, botanical illustrations, and elegant typography stickers. Designed for planners, bullet journals, scrapbooks, and creative souls.",
-    price: 18,
-    image: heroImg,
-    images: [heroImg],
-    features: ["50+ stickers per pack", "Washi tape & die-cut styles", "Premium paper with easy repositioning", "Themed for seasonal & everyday use"],
+    name: "'Love You' Cursive Sticker Pack",
+    tagline: "A little love, beautifully written",
+    description: "Romantic 'Love You' cursive vinyl stickers in flowing calligraphy — ideal for Valentine's gifts, anniversary surprises, love notes, gift wrapping, and journal embellishments. Comes in a pack of 8 stickers in classic black and shimmering gold combinations.",
+    price: 220,
+    image: calligraphyStickersImg,
+    images: [calligraphyStickersImg],
+    features: ["Set of 8 stickers", "Black & gold finishes", "Premium glossy vinyl", "Strong long-lasting adhesive"],
   },
 
   // Creator's Studio
@@ -210,7 +213,7 @@ export const products: Product[] = [
     name: "Artisan Silicone Mold Collection",
     tagline: "Shape your masterpiece from the very beginning",
     description: "Professional-grade, translucent silicone molds designed for flawless resin casting. Featuring sharp edges, smooth interiors for a glass-like finish, and unique architectural shapes, this collection is the foundation of high-end resin artistry.",
-    price: 110,
+    price: 3200,
     image: heroImg,
     images: [heroImg],
     features: ["Platinum-cure silicone", "Tear-resistant and durable", "Mirror-finish interior", "Includes 5 unique shapes"],
@@ -221,7 +224,7 @@ export const products: Product[] = [
     name: "UV Resin Starter Kit",
     tagline: "The curated toolkit for the discerning creator",
     description: "Everything a budding artisan needs to begin their journey in luxury crafting. Housed in beautiful minimalist packaging, this kit includes premium UV resin, precision tools, and a selection of delicate inclusions, assembled with the same care as our finished artworks.",
-    price: 150,
+    price: 4500,
     image: heroImg,
     images: [heroImg],
     features: ["Crystal-clear, non-yellowing UV resin", "Precision brass tweezers and mixing tools", "Curated selection of gold leaf and dried botanicals", "Curing lamp included"],
@@ -234,7 +237,7 @@ export const products: Product[] = [
     name: "Peacock Bead-Work Panel",
     tagline: "Where Pakistan's heritage shines in every bead",
     description: "A breathtaking, dimensional masterpiece that pays homage to traditional Pakistani craftsmanship. Thousands of beads and crystals in rich emerald, sapphire, and gold are meticulously hand-applied to create the majestic form of a peacock, resulting in an artwork that shimmers and shifts with the light.",
-    price: 1200,
+    price: 35000,
     image: peacockImg,
     images: [peacockImg],
     features: ["Hand-applied beadwork and crystals", "Premium velvet backing", "Custom framing available", "Certificate of Authenticity"],
@@ -245,8 +248,8 @@ export const products: Product[] = [
     name: "Floral Dimensional Canvas",
     tagline: "Touch the story of nature's most intimate moments",
     description: "A heavily textured 3D art piece featuring sculptured petals emerging from a deep charcoal background. This monochromatic and gold-accented canvas invites touch and casts dynamic shadows, making it a living piece of art that changes throughout the day.",
-    price: 850,
-    image: peacockImg, // Fallback
+    price: 25000,
+    image: peacockImg,
     images: [peacockImg],
     features: ["Sculptural impasto technique", "Metallic gold leaf accents", "Gallery-wrapped canvas", "Ready to hang"],
   },
@@ -256,8 +259,8 @@ export const products: Product[] = [
     name: "Geometric Crystalline Frame",
     tagline: "Precision and sparkle, married in three dimensions",
     description: "An intricate fusion of rigid geometry and organic sparkle. This textured frame uses faceted crystals and raised beadwork to create a mesmerizing border for mirrors or central artworks. It is an architectural jewel for your wall.",
-    price: 950,
-    image: peacockImg, // Fallback
+    price: 28000,
+    image: peacockImg,
     images: [peacockImg],
     features: ["Architectural 3D design", "Precision-cut glass crystals", "Satin black wood frame", "Museum-quality presentation"],
   },

@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { categories, products } from "@/lib/data";
+import { categories, products, formatPrice } from "@/lib/data";
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero.png";
 
@@ -195,7 +195,7 @@ export default function Home() {
                   </div>
                   <p className="text-muted-foreground text-sm font-light mb-4 flex-1">{product.tagline}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-foreground tracking-wider">${product.price}</span>
+                    <span className="text-foreground tracking-wider">{formatPrice(product.price)}</span>
                     <span className="text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 duration-300" style={{ color: c }}>Discover →</span>
                   </div>
                 </Link>

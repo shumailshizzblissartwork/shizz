@@ -1,4 +1,5 @@
 import { useCart } from "@/lib/cart-context";
+import { formatPrice } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import {
   X,
@@ -17,15 +18,15 @@ function buildWhatsAppMessage(
 ) {
   const lines = items.map(
     (i) =>
-      `• ${i.name} × ${i.quantity} — $${(i.price * i.quantity).toFixed(2)}`,
+      `• ${i.name} × ${i.quantity} — ${formatPrice(i.price * i.quantity)}`,
   );
   const message = [
-    "🌸 *New Order — Shizz Bliss Studio*",
+    "🌸 *New Order — Shumail's Shizz Bliss Studio*",
     "",
     "*Order Details:*",
     ...lines,
     "",
-    `*Total: $${total.toFixed(2)}*`,
+    `*Total: ${formatPrice(total)}*`,
     "",
     "Please confirm my order and share shipping details. Thank you! ✨",
   ].join("\n");
@@ -120,7 +121,7 @@ export function CartDrawer() {
                     {item.name}
                   </h3>
                   <p className="text-primary text-sm font-light mb-3">
-                    ${item.price.toFixed(2)}
+                    {formatPrice(item.price)}
                   </p>
                   {/* Quantity controls */}
                   <div className="flex items-center gap-2">
@@ -149,7 +150,7 @@ export function CartDrawer() {
                 </div>
                 <div className="text-right shrink-0">
                   <span className="text-sm font-light tracking-wide">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    {formatPrice(item.price * item.quantity)}
                   </span>
                 </div>
               </div>
@@ -174,7 +175,7 @@ export function CartDrawer() {
                 Order Total
               </span>
               <span className="font-serif text-2xl text-foreground">
-                ${total.toFixed(2)}
+                {formatPrice(total)}
               </span>
             </div>
 

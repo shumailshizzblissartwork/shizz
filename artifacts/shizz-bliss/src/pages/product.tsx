@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout";
 import { Link, useParams } from "wouter";
-import { products, categories } from "@/lib/data";
+import { products, categories, formatPrice } from "@/lib/data";
 import NotFound from "./not-found";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -78,7 +78,7 @@ export default function ProductPage() {
               <p className="text-xl text-primary font-serif italic mb-8">{product.tagline}</p>
               
               <div className="text-2xl tracking-wider font-light mb-10 border-b border-border/50 pb-8">
-                ${product.price}
+                {formatPrice(product.price)}
               </div>
 
               <div className="prose prose-invert prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground mb-12 max-w-none">
