@@ -116,8 +116,8 @@ export function Navbar() {
           <Link
             href="/custom-orders"
             className={cn(
-              "text-xs tracking-wider uppercase transition-colors hover:text-primary",
-              location === "/custom-orders" ? "text-primary" : "text-muted-foreground"
+              "text-xs tracking-wider uppercase transition-all duration-300 hover:text-primary relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1.5px] after:w-0 after:bg-gradient-to-r after:from-[#d4af37] after:via-[#e8729a] after:to-[#a78bfa] after:transition-all after:duration-500 hover:after:w-full",
+              location === "/custom-orders" ? "text-primary after:w-full" : "text-muted-foreground"
             )}
           >
             Bespoke Orders
@@ -125,8 +125,8 @@ export function Navbar() {
           <Link
             href="/about"
             className={cn(
-              "text-xs tracking-wider uppercase transition-colors hover:text-primary",
-              location === "/about" ? "text-primary" : "text-muted-foreground"
+              "text-xs tracking-wider uppercase transition-all duration-300 hover:text-primary relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1.5px] after:w-0 after:bg-gradient-to-r after:from-[#d4af37] after:via-[#e8729a] after:to-[#a78bfa] after:transition-all after:duration-500 hover:after:w-full",
+              location === "/about" ? "text-primary after:w-full" : "text-muted-foreground"
             )}
           >
             Our Story
@@ -134,8 +134,8 @@ export function Navbar() {
           <Link
             href="/contact"
             className={cn(
-              "text-xs tracking-wider uppercase transition-colors hover:text-primary",
-              location === "/contact" ? "text-primary" : "text-muted-foreground"
+              "text-xs tracking-wider uppercase transition-all duration-300 hover:text-primary relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1.5px] after:w-0 after:bg-gradient-to-r after:from-[#d4af37] after:via-[#e8729a] after:to-[#a78bfa] after:transition-all after:duration-500 hover:after:w-full",
+              location === "/contact" ? "text-primary after:w-full" : "text-muted-foreground"
             )}
           >
             Contact
@@ -144,7 +144,7 @@ export function Navbar() {
           {/* Cart Icon */}
           <button
             onClick={openCart}
-            className="relative text-muted-foreground hover:text-primary transition-colors p-1"
+            className="relative text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 active:scale-95 p-1"
             aria-label="Open cart"
           >
             <ShoppingBag size={18} />
@@ -160,7 +160,7 @@ export function Navbar() {
 
           <Link
             href="/custom-orders"
-            className="border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors tracking-widest uppercase text-[10px] px-4 py-2 rounded-sm"
+            className="border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] active:scale-95 tracking-widest uppercase text-[10px] px-4 py-2 rounded-sm"
           >
             Commission
           </Link>
@@ -170,7 +170,7 @@ export function Navbar() {
         <div className="md:hidden flex items-center gap-4 z-50">
           <button
             onClick={openCart}
-            className="relative text-muted-foreground hover:text-primary transition-colors p-1"
+            className="relative text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 active:scale-95 p-1"
             aria-label="Open cart"
           >
             <ShoppingBag size={20} />
